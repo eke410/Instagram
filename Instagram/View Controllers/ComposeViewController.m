@@ -83,6 +83,7 @@
             NSLog(@"Created post successfully");
         }
     }];
+    [self.navigationController popViewControllerAnimated:TRUE];
 }
 
 /*
