@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UITextView *captionTextView;
+@property (strong, nonatomic) UIAlertController *emptyPhotoAlert;
 
 @end
 
@@ -20,7 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   
+    self.emptyPhotoAlert = [UIAlertController alertControllerWithTitle:@"No photo selected" message:@"Please select a photo" preferredStyle:(UIAlertControllerStyleAlert)];
+    [self.emptyPhotoAlert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}]];
 }
 
 - (IBAction)selectPhoto:(id)sender {
@@ -75,15 +77,20 @@
 }
 
 - (IBAction)createPost:(id)sender {
-    UIImage *resizedImage = [self resizeImage:self.photoImageView.image withSize:CGSizeMake(500, 500)];
-    [Post postUserImage:resizedImage withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if (error != nil) {
-            NSLog(@"Failed to create post: %@", error.localizedDescription);
-        } else {
-            NSLog(@"Created post successfully");
-        }
-    }];
-    [self.navigationController popViewControllerAnimated:TRUE];
+    if (self.photoImageView.image == nil) {
+        // if no image, don't allow post
+        [self presentViewController:self.emptyPhotoAlert animated:YES completion:^{}];
+    } else {
+        UIImage *resizedImage = [self resizeImage:self.photoImageView.image withSize:CGSizeMake(500, 500)];
+        [Post postUserImage:resizedImage withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+            if (error != nil) {
+                NSLog(@"Failed to create post: %@", error.localizedDescription);
+            } else {
+                NSLog(@"Created post successfully");
+            }
+        }];
+        [self.navigationController popViewControllerAnimated:TRUE];
+    }
 }
 
 /*
