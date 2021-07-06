@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		041859AD2695003900F76FB6 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041859AC2695003900F76FB6 /* ComposeViewController.m */; };
 		041859B126950FF000F76FB6 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 041859B026950FF000F76FB6 /* Post.m */; };
+		041859B4269517E600F76FB6 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041859B3269517E600F76FB6 /* PostCell.m */; };
 		0446D8632694F09A00F3BB60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446D8622694F09A00F3BB60 /* LoginViewController.m */; };
 		0446D8662694F37100F3BB60 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446D8652694F37100F3BB60 /* HomeViewController.m */; };
 		04FB2EF02694E75C00CF7B53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB2EEF2694E75C00CF7B53 /* AppDelegate.m */; };
@@ -46,6 +47,8 @@
 		041859AC2695003900F76FB6 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		041859AF26950FF000F76FB6 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		041859B026950FF000F76FB6 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		041859B2269517E600F76FB6 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		041859B3269517E600F76FB6 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		0446D8612694F09A00F3BB60 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0446D8622694F09A00F3BB60 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0446D8642694F37100F3BB60 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 		0446D8602694F07F00F3BB60 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				041859B2269517E600F76FB6 /* PostCell.h */,
+				041859B3269517E600F76FB6 /* PostCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				0446D8632694F09A00F3BB60 /* LoginViewController.m in Sources */,
 				04FB2EF02694E75C00CF7B53 /* AppDelegate.m in Sources */,
 				04FB2F012694E75D00CF7B53 /* main.m in Sources */,
+				041859B4269517E600F76FB6 /* PostCell.m in Sources */,
 				041859AD2695003900F76FB6 /* ComposeViewController.m in Sources */,
 				0446D8662694F37100F3BB60 /* HomeViewController.m in Sources */,
 				04FB2EF32694E75C00CF7B53 /* SceneDelegate.m in Sources */,
