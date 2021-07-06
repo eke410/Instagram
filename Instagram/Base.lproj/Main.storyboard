@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="112.5"/>
         </scene>
-        <!--Home-->
+        <!--Instagram-->
         <scene sceneID="3ZK-au-3K0">
             <objects>
                 <viewController id="7hJ-Pb-zi3" customClass="HomeViewController" sceneMemberID="viewController">
@@ -96,7 +96,13 @@
                         <viewLayoutGuide key="safeArea" id="it0-gp-iXe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="yB2-RW-exc"/>
+                    <navigationItem key="navigationItem" title="Instagram" id="yB2-RW-exc">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="boj-i0-adG">
+                            <connections>
+                                <action selector="logoutUser:" destination="7hJ-Pb-zi3" id="1yN-rW-Dmw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4n8-VI-Of6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
