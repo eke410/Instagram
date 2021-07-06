@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		041859AD2695003900F76FB6 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041859AC2695003900F76FB6 /* ComposeViewController.m */; };
+		041859B126950FF000F76FB6 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 041859B026950FF000F76FB6 /* Post.m */; };
 		0446D8632694F09A00F3BB60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446D8622694F09A00F3BB60 /* LoginViewController.m */; };
 		0446D8662694F37100F3BB60 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446D8652694F37100F3BB60 /* HomeViewController.m */; };
 		04FB2EF02694E75C00CF7B53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB2EEF2694E75C00CF7B53 /* AppDelegate.m */; };
@@ -43,6 +44,8 @@
 /* Begin PBXFileReference section */
 		041859AB2695003900F76FB6 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		041859AC2695003900F76FB6 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		041859AF26950FF000F76FB6 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		041859B026950FF000F76FB6 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		0446D8612694F09A00F3BB60 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0446D8622694F09A00F3BB60 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0446D8642694F37100F3BB60 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -115,6 +118,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		041859AE2695083400F76FB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				041859AF26950FF000F76FB6 /* Post.h */,
+				041859B026950FF000F76FB6 /* Post.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0446D85F2694F07200F3BB60 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +172,7 @@
 		04FB2EED2694E75C00CF7B53 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				041859AE2695083400F76FB6 /* Models */,
 				0446D8602694F07F00F3BB60 /* Views */,
 				0446D85F2694F07200F3BB60 /* View Controllers */,
 				04FB2EEE2694E75C00CF7B53 /* AppDelegate.h */,
@@ -446,6 +459,7 @@
 				041859AD2695003900F76FB6 /* ComposeViewController.m in Sources */,
 				0446D8662694F37100F3BB60 /* HomeViewController.m in Sources */,
 				04FB2EF32694E75C00CF7B53 /* SceneDelegate.m in Sources */,
+				041859B126950FF000F76FB6 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
