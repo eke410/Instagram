@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="112.5"/>
         </scene>
-        <!--Instagram-->
+        <!--Home-->
         <scene sceneID="3ZK-au-3K0">
             <objects>
                 <viewController id="7hJ-Pb-zi3" customClass="HomeViewController" sceneMemberID="viewController">
@@ -96,10 +96,15 @@
                         <viewLayoutGuide key="safeArea" id="it0-gp-iXe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Instagram" id="yB2-RW-exc">
+                    <navigationItem key="navigationItem" title="Home" id="yB2-RW-exc">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="boj-i0-adG">
                             <connections>
                                 <action selector="logoutUser:" destination="7hJ-Pb-zi3" id="1yN-rW-Dmw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="plus.square" catalog="system" id="zX5-eL-JEx">
+                            <connections>
+                                <segue destination="yCO-q6-mop" kind="show" id="qAH-Nw-dly"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -107,6 +112,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4n8-VI-Of6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1549" y="113"/>
+        </scene>
+        <!--New Post-->
+        <scene sceneID="JNP-eK-ul6">
+            <objects>
+                <viewController id="yCO-q6-mop" customClass="ComposeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f2q-Gt-U9G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clr-cT-vsc">
+                                <rect key="frame" x="87" y="93" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6H-Rf-ntF">
+                                <rect key="frame" x="87" y="341" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select a photo from Camera Roll">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPhoto:" destination="yCO-q6-mop" eventType="touchUpInside" id="es7-xX-J47"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkZ-Ph-nkd">
+                                <rect key="frame" x="144" y="379" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take a new picture">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="yCO-q6-mop" eventType="touchUpInside" id="nY1-MG-jnL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Lo-bM-0tj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Post" id="38m-7V-U5X"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="clr-cT-vsc" id="BAj-3i-f3m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q5Y-cN-sOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2276.8115942028985" y="112.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cJ3-2M-Snd">
@@ -128,8 +179,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus.square" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
