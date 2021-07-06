@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) UIAlertController *emptyAlert;
 @property (strong, nonatomic) UIAlertController *registerErrorAlert;
 @property (strong, nonatomic) UIAlertController *loginErrorAlert;
@@ -39,9 +40,11 @@
 
 - (IBAction)loginUser:(id)sender {
     
+    [self.activityIndicator startAnimating];
+
     if ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""]) {
         [self presentViewController:self.emptyAlert animated:YES completion:^{
-            // optional code for what happens after the alert controller has finished presenting
+            [self.activityIndicator stopAnimating];
         }];
     } else {
         NSString *username = self.usernameField.text;
@@ -51,10 +54,11 @@
             if (error != nil) {
                 NSLog(@"User log in failed: %@", error.localizedDescription);
                 [self presentViewController:self.loginErrorAlert animated:YES completion:^{
-                    // optional code for what happens after the alert controller has finished presenting
+                    [self.activityIndicator stopAnimating];
                 }];
             } else {
                 NSLog(@"User logged in successfully");
+                [self.activityIndicator stopAnimating];
                 [self performSegueWithIdentifier:@"loginSegue" sender:nil];
             }
         }];
@@ -64,9 +68,11 @@
 
 - (IBAction)registerUser:(id)sender {
     
+    [self.activityIndicator startAnimating];
+    
     if ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""]) {
         [self presentViewController:self.emptyAlert animated:YES completion:^{
-            // optional code for what happens after the alert controller has finished presenting
+            [self.activityIndicator stopAnimating];
         }];
     } else {
         // initialize a user object
@@ -81,10 +87,11 @@
             if (error != nil) {
                 NSLog(@"Error: %@", error.localizedDescription);
                 [self presentViewController:self.registerErrorAlert animated:YES completion:^{
-                    // optional code for what happens after the alert controller has finished presenting
+                    [self.activityIndicator stopAnimating];
                 }];
             } else {
                 NSLog(@"User registered successfully");
+                [self.activityIndicator stopAnimating];
                 [self performSegueWithIdentifier:@"loginSegue" sender:nil];
             }
         }];

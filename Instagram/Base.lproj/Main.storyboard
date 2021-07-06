@@ -67,11 +67,16 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dZF-0D-on0">
+                                <rect key="frame" x="197" y="582" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="dZF-0D-on0" id="BbP-yB-sRs"/>
                         <outlet property="passwordField" destination="wY5-u3-qUj" id="PVH-CV-UXL"/>
                         <outlet property="usernameField" destination="etU-Bl-WDt" id="WJy-ft-zBt"/>
                         <segue destination="Fd2-tR-IQZ" kind="presentation" identifier="loginSegue" id="YtR-g7-fpr"/>
