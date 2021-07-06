@@ -10,6 +10,7 @@
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet UITextView *captionTextView;
 
 @end
 
@@ -58,6 +59,9 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)createPost:(id)sender {
+    
+}
 
 /*
 #pragma mark - Navigation

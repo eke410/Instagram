@@ -122,12 +122,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clr-cT-vsc">
-                                <rect key="frame" x="87" y="93" width="240" height="240"/>
+                                <rect key="frame" x="87" y="120" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6H-Rf-ntF">
-                                <rect key="frame" x="87" y="341" width="240" height="30"/>
+                                <rect key="frame" x="87" y="368" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select a photo from Camera Roll">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -137,7 +137,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkZ-Ph-nkd">
-                                <rect key="frame" x="144" y="379" width="128" height="30"/>
+                                <rect key="frame" x="144" y="406" width="128" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Take a new picture">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -146,18 +146,38 @@
                                     <action selector="takePhoto:" destination="yCO-q6-mop" eventType="touchUpInside" id="nY1-MG-jnL"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add a caption" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-qw-C2n">
+                                <rect key="frame" x="32" y="454" width="350" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93594229221343994" green="0.87104851007461548" blue="0.96226269006729126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Lo-bM-0tj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Post" id="38m-7V-U5X"/>
+                    <navigationItem key="navigationItem" title="New Post" id="38m-7V-U5X">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="0oM-Ql-OwH">
+                            <connections>
+                                <action selector="createPost:" destination="yCO-q6-mop" id="IxR-XM-d32"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="captionTextView" destination="gPc-qw-C2n" id="PdW-LE-mVV"/>
                         <outlet property="photoImageView" destination="clr-cT-vsc" id="BAj-3i-f3m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5Y-cN-sOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276.8115942028985" y="112.5"/>
+            <point key="canvasLocation" x="2275.36231884058" y="112.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cJ3-2M-Snd">
