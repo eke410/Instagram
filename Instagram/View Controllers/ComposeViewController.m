@@ -8,6 +8,7 @@
 #import "ComposeViewController.h"
 #import "Post.h"
 #import "UITextView+Placeholder.h"
+#import "MBProgressHUD.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -25,6 +26,7 @@
     self.emptyPhotoAlert = [UIAlertController alertControllerWithTitle:@"No photo selected" message:@"Please select a photo" preferredStyle:(UIAlertControllerStyleAlert)];
     [self.emptyPhotoAlert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}]];
     
+    [self.photoImageView setImage:[UIImage imageNamed:@"image_placeholder"]];
     self.captionTextView.placeholder = @"Write a caption...";
 }
 
@@ -80,19 +82,21 @@
 }
 
 - (IBAction)createPost:(id)sender {
-    if (self.photoImageView.image == nil) {
+    if (self.photoImageView.image == [UIImage imageNamed:@"image_placeholder"]) {
         // if no image, don't allow post
         [self presentViewController:self.emptyPhotoAlert animated:YES completion:^{}];
     } else {
         UIImage *resizedImage = [self resizeImage:self.photoImageView.image withSize:CGSizeMake(500, 500)];
+        [MBProgressHUD showHUDAddedTo:self.view animated:true];
         [Post postUserImage:resizedImage withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+            [MBProgressHUD hideHUDForView:self.view animated:true];
+            [self.navigationController popViewControllerAnimated:TRUE];
             if (error != nil) {
                 NSLog(@"Failed to create post: %@", error.localizedDescription);
             } else {
                 NSLog(@"Created post successfully");
             }
         }];
-        [self.navigationController popViewControllerAnimated:TRUE];
     }
 }
 
