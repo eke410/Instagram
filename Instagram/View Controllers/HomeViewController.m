@@ -133,9 +133,7 @@ InfiniteScrollActivityView *loadingMoreView;
 }
 
 - (void)didPost {
-    NSLog(@"posted");
     [self queryPosts:20];
-//    self.posts
 }
 
 #pragma mark - Navigation
