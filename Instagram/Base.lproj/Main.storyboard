@@ -210,7 +210,7 @@
                                     <action selector="takePhoto:" destination="yCO-q6-mop" eventType="touchUpInside" id="nY1-MG-jnL"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add a caption" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-qw-C2n">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-qw-C2n">
                                 <rect key="frame" x="16" y="556" width="382" height="204"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <color key="textColor" systemColor="labelColor"/>

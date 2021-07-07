@@ -7,6 +7,7 @@
 
 #import "ComposeViewController.h"
 #import "Post.h"
+#import "UITextView+Placeholder.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -23,6 +24,8 @@
     // Do any additional setup after loading the view.
     self.emptyPhotoAlert = [UIAlertController alertControllerWithTitle:@"No photo selected" message:@"Please select a photo" preferredStyle:(UIAlertControllerStyleAlert)];
     [self.emptyPhotoAlert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}]];
+    
+    self.captionTextView.placeholder = @"Write a caption...";
 }
 
 - (IBAction)selectPhoto:(id)sender {
