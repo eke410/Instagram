@@ -25,6 +25,10 @@
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+        
+    UIRefreshControl *refreshControl = [UIRefreshControl new];
+    [refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:refreshControl atIndex:0];
     
     [self queryPosts];
 }
@@ -53,7 +57,7 @@
     return cell;
 }
 
-- (void) queryPosts {
+- (void)queryPosts {
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
@@ -70,6 +74,11 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+}
+
+- (void)refreshData:(UIRefreshControl *)refreshControl {
+    [self queryPosts];
+    [refreshControl endRefreshing];
 }
 
 /*
