@@ -13,7 +13,7 @@ The following **required** functionality is completed:
 - [x] The current signed in user is persisted across app restarts
 - [x] User can take a photo, add a caption, and post it to "Instagram"
 - [x] User can view the last 20 posts submitted to "Instagram"
-- [ ] User can pull to refresh the last 20 posts submitted to "Instagram"
+- [x] User can pull to refresh the last 20 posts submitted to "Instagram"
 - [ ] User can tap a post to view post details, including timestamp and caption.
 
 The following **optional** features are implemented:
@@ -55,6 +55,7 @@ GIF created with [Kap](https://getkap.co/).
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [UITextView-Placeholder](https://github.com/devxoul/UITextView-Placeholder)
 
 
 ## Notes
