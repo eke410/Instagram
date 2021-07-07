@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04084402269634A9003AA2DA /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04084401269634A9003AA2DA /* DetailsViewController.m */; };
 		041859AD2695003900F76FB6 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041859AC2695003900F76FB6 /* ComposeViewController.m */; };
 		041859B126950FF000F76FB6 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 041859B026950FF000F76FB6 /* Post.m */; };
 		041859B4269517E600F76FB6 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041859B3269517E600F76FB6 /* PostCell.m */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04084400269634A9003AA2DA /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		04084401269634A9003AA2DA /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		041859AB2695003900F76FB6 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		041859AC2695003900F76FB6 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		041859AF26950FF000F76FB6 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 				0446D8652694F37100F3BB60 /* HomeViewController.m */,
 				041859AB2695003900F76FB6 /* ComposeViewController.h */,
 				041859AC2695003900F76FB6 /* ComposeViewController.m */,
+				04084400269634A9003AA2DA /* DetailsViewController.h */,
+				04084401269634A9003AA2DA /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -464,6 +469,7 @@
 				041859B4269517E600F76FB6 /* PostCell.m in Sources */,
 				041859AD2695003900F76FB6 /* ComposeViewController.m in Sources */,
 				0446D8662694F37100F3BB60 /* HomeViewController.m in Sources */,
+				04084402269634A9003AA2DA /* DetailsViewController.m in Sources */,
 				04FB2EF32694E75C00CF7B53 /* SceneDelegate.m in Sources */,
 				041859B126950FF000F76FB6 /* Post.m in Sources */,
 			);

@@ -10,6 +10,7 @@
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
 #import "PostCell.h"
+#import "DetailsViewController.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -81,14 +82,17 @@
     [refreshControl endRefreshing];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    DetailsViewController *detailsViewController = [segue destinationViewController];
+    detailsViewController.post = self.posts[indexPath.row];
 }
-*/
+
 
 @end
