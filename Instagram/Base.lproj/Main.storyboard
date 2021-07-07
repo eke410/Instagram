@@ -129,6 +129,9 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="likePost:" destination="mMW-3f-6cz" eventType="touchUpInside" id="JB6-Cz-QeA"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ij7-Kh-kn1">
                                                     <rect key="frame" x="52" y="469" width="28" height="24"/>
@@ -187,6 +190,7 @@
                                         <connections>
                                             <outlet property="authorLabel" destination="Ojl-7J-QnJ" id="Cen-d7-SVB"/>
                                             <outlet property="captionLabel" destination="mzP-2i-Oty" id="Y2E-K7-T8u"/>
+                                            <outlet property="likesCountLabel" destination="PGt-a8-zDx" id="gEi-aO-YDb"/>
                                             <outlet property="photoImageView" destination="agv-N9-SEF" id="BHe-s4-8gb"/>
                                             <outlet property="timeAgoLabel" destination="aVK-Qp-A3c" id="IXi-im-N2v"/>
                                             <segue destination="2N9-ea-HDR" kind="show" identifier="detailsSegue" id="Ij0-ga-5ds"/>
@@ -316,6 +320,7 @@
                         <outlet property="authorLabel" destination="iW7-nE-6fm" id="Hqm-Tt-lXq"/>
                         <outlet property="captionLabel" destination="9yL-WS-VCb" id="HPZ-Ku-Yeq"/>
                         <outlet property="createdAtLabel" destination="6PI-Bd-bzS" id="z3c-Z0-iff"/>
+                        <outlet property="likesCountLabel" destination="UQr-1m-3IH" id="4B9-Gb-jT0"/>
                         <outlet property="photoImageView" destination="qPI-vO-tcl" id="sa1-19-cBF"/>
                     </connections>
                 </viewController>

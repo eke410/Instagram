@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
+@property (weak, nonatomic) IBOutlet UILabel *likesCountLabel;
 
 @end
 
@@ -33,6 +34,7 @@
     self.captionLabel.text = self.post.caption;
     self.authorLabel.text = self.post.author.username;
     self.createdAtLabel.text = [self.post.createdAt formattedDateWithFormat:@"MMMM d, yyyy · h:mm a"];
+    self.likesCountLabel.text = [[self.post.likeCount stringValue] stringByAppendingString:@" likes"];
 }
 
 /*
