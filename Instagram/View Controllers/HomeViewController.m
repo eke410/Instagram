@@ -12,8 +12,9 @@
 #import "PostCell.h"
 #import "DetailsViewController.h"
 #import "InfiniteScrollActivityView.h"
+#import "ComposeViewController.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface HomeViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *posts;
@@ -131,6 +132,11 @@ InfiniteScrollActivityView *loadingMoreView;
     }
 }
 
+- (void)didPost {
+    NSLog(@"posted");
+    [self queryPosts:20];
+//    self.posts
+}
 
 #pragma mark - Navigation
 
@@ -142,6 +148,9 @@ InfiniteScrollActivityView *loadingMoreView;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.post = self.posts[indexPath.row];
+    } else if ([segue.identifier isEqualToString:@"composeSegue"]) {
+        ComposeViewController *composeViewController = [segue destinationViewController];
+        composeViewController.delegate = self;
     }
 
 }

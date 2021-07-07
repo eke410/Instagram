@@ -174,7 +174,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus.square" catalog="system" id="zX5-eL-JEx">
                             <connections>
-                                <segue destination="yCO-q6-mop" kind="show" id="qAH-Nw-dly"/>
+                                <segue destination="yCO-q6-mop" kind="show" identifier="composeSegue" id="qAH-Nw-dly"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

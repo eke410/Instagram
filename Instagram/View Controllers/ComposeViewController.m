@@ -95,6 +95,7 @@
                 NSLog(@"Failed to create post: %@", error.localizedDescription);
             } else {
                 NSLog(@"Created post successfully");
+                [self.delegate didPost];
             }
         }];
     }
