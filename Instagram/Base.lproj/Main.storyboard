@@ -178,37 +178,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clr-cT-vsc">
-                                <rect key="frame" x="87" y="120" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="clr-cT-vsc">
+                                <rect key="frame" x="32" y="158" width="350" height="350"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="Mcg-66-t6t"/>
+                                    <constraint firstAttribute="width" constant="350" id="g6V-qN-5My"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6H-Rf-ntF">
-                                <rect key="frame" x="87" y="368" width="240" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select a photo from Camera Roll">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6H-Rf-ntF">
+                                <rect key="frame" x="32" y="104" width="27" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="4Je-Id-7WF"/>
+                                    <constraint firstAttribute="width" constant="27" id="lok-ug-Xn9"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="photo.on.rectangle.angled" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
                                     <action selector="selectPhoto:" destination="yCO-q6-mop" eventType="touchUpInside" id="es7-xX-J47"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkZ-Ph-nkd">
-                                <rect key="frame" x="144" y="406" width="128" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take a new picture">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkZ-Ph-nkd">
+                                <rect key="frame" x="357" y="104" width="25" height="22"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="camera" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
                                     <action selector="takePhoto:" destination="yCO-q6-mop" eventType="touchUpInside" id="nY1-MG-jnL"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add a caption" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-qw-C2n">
-                                <rect key="frame" x="32" y="454" width="350" height="152"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93594229221343994" green="0.87104851007461548" blue="0.96226269006729126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add a caption" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-qw-C2n">
+                                <rect key="frame" x="16" y="556" width="382" height="204"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -219,6 +225,18 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Lo-bM-0tj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AkZ-Ph-nkd" firstAttribute="top" secondItem="X6H-Rf-ntF" secondAttribute="top" id="8KV-Xh-GXQ"/>
+                            <constraint firstItem="8Lo-bM-0tj" firstAttribute="trailing" secondItem="gPc-qw-C2n" secondAttribute="trailing" constant="16" id="GZY-fc-PhS"/>
+                            <constraint firstItem="X6H-Rf-ntF" firstAttribute="top" secondItem="8Lo-bM-0tj" secondAttribute="top" constant="48" id="IVX-WI-M8i"/>
+                            <constraint firstItem="clr-cT-vsc" firstAttribute="centerX" secondItem="f2q-Gt-U9G" secondAttribute="centerX" id="Tuf-MZ-34v"/>
+                            <constraint firstItem="8Lo-bM-0tj" firstAttribute="trailing" secondItem="AkZ-Ph-nkd" secondAttribute="trailing" constant="32" id="VoL-a4-bII"/>
+                            <constraint firstItem="gPc-qw-C2n" firstAttribute="leading" secondItem="8Lo-bM-0tj" secondAttribute="leading" constant="16" id="Z43-5A-cJE"/>
+                            <constraint firstItem="X6H-Rf-ntF" firstAttribute="leading" secondItem="8Lo-bM-0tj" secondAttribute="leading" constant="32" id="cGJ-0f-SXl"/>
+                            <constraint firstItem="clr-cT-vsc" firstAttribute="top" secondItem="X6H-Rf-ntF" secondAttribute="bottom" constant="32" id="h29-gK-QWG"/>
+                            <constraint firstItem="gPc-qw-C2n" firstAttribute="top" secondItem="clr-cT-vsc" secondAttribute="bottom" constant="48" id="ngW-CC-Uda"/>
+                            <constraint firstItem="8Lo-bM-0tj" firstAttribute="bottom" secondItem="gPc-qw-C2n" secondAttribute="bottom" constant="48" id="t7q-YK-zXb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Post" id="38m-7V-U5X">
                         <barButtonItem key="rightBarButtonItem" title="Post" id="0oM-Ql-OwH">
@@ -256,6 +274,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="image_placeholder" width="375" height="375"/>
+        <image name="photo.on.rectangle.angled" catalog="system" width="128" height="101"/>
         <image name="plus.square" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
