@@ -152,7 +152,7 @@
                                             <outlet property="captionLabel" destination="mzP-2i-Oty" id="Y2E-K7-T8u"/>
                                             <outlet property="photoImageView" destination="agv-N9-SEF" id="BHe-s4-8gb"/>
                                             <outlet property="timeAgoLabel" destination="aVK-Qp-A3c" id="IXi-im-N2v"/>
-                                            <segue destination="2N9-ea-HDR" kind="show" id="Ij0-ga-5ds"/>
+                                            <segue destination="2N9-ea-HDR" kind="show" identifier="detailsSegue" id="Ij0-ga-5ds"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
