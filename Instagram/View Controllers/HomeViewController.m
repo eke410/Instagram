@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "PostCell.h"
 #import "DetailsViewController.h"
+#import "InfiniteScrollActivityView.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
@@ -22,6 +23,8 @@
 
 @implementation HomeViewController
 
+InfiniteScrollActivityView *loadingMoreView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -31,6 +34,16 @@
     UIRefreshControl *refreshControl = [UIRefreshControl new];
     [refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:refreshControl atIndex:0];
+        
+    // Set up Infinite Scroll loading indicator
+    CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    loadingMoreView.hidden = true;
+    [self.tableView addSubview:loadingMoreView];
+    
+    UIEdgeInsets insets = self.tableView.contentInset;
+    insets.bottom += InfiniteScrollActivityView.defaultHeight;
+    self.tableView.contentInset = insets;
     
     [self queryPosts:20];
 }
@@ -74,6 +87,7 @@
             self.posts = (NSMutableArray *) posts;
             [self.tableView reloadData];
             self.isMoreDataLoading = false;
+            [loadingMoreView stopAnimating];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
@@ -94,11 +108,19 @@
         // When the user has scrolled past the threshold, start requesting
         if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
             self.isMoreDataLoading = true;
+            
+            // Update position of loadingMoreView, and start loading indicator
+            CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+            loadingMoreView.frame = frame;
+            [loadingMoreView startAnimating];
+            
             PFQuery *query = [PFQuery queryWithClassName:@"Post"];
             [query countObjectsInBackgroundWithBlock:^(int count, NSError * _Nullable error) {
                 if (!error) {
                     if (count > self.posts.count) {
                         [self queryPosts:(self.posts.count+20)];
+                    } else {
+                        [loadingMoreView stopAnimating];
                     }
                 } else {
                     NSLog(@"Error getting number of posts in database");

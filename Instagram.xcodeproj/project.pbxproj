@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04084402269634A9003AA2DA /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04084401269634A9003AA2DA /* DetailsViewController.m */; };
+		0408440526964B57003AA2DA /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408440426964B57003AA2DA /* InfiniteScrollActivityView.m */; };
 		041859AD2695003900F76FB6 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041859AC2695003900F76FB6 /* ComposeViewController.m */; };
 		041859B126950FF000F76FB6 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 041859B026950FF000F76FB6 /* Post.m */; };
 		041859B4269517E600F76FB6 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041859B3269517E600F76FB6 /* PostCell.m */; };
@@ -46,6 +47,8 @@
 /* Begin PBXFileReference section */
 		04084400269634A9003AA2DA /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		04084401269634A9003AA2DA /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		0408440326964B57003AA2DA /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
+		0408440426964B57003AA2DA /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 		041859AB2695003900F76FB6 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		041859AC2695003900F76FB6 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		041859AF26950FF000F76FB6 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 			children = (
 				041859B2269517E600F76FB6 /* PostCell.h */,
 				041859B3269517E600F76FB6 /* PostCell.m */,
+				0408440326964B57003AA2DA /* InfiniteScrollActivityView.h */,
+				0408440426964B57003AA2DA /* InfiniteScrollActivityView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 			files = (
 				0446D8632694F09A00F3BB60 /* LoginViewController.m in Sources */,
 				04FB2EF02694E75C00CF7B53 /* AppDelegate.m in Sources */,
+				0408440526964B57003AA2DA /* InfiniteScrollActivityView.m in Sources */,
 				04FB2F012694E75D00CF7B53 /* main.m in Sources */,
 				041859B4269517E600F76FB6 /* PostCell.m in Sources */,
 				041859AD2695003900F76FB6 /* ComposeViewController.m in Sources */,
