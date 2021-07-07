@@ -99,11 +99,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" id="mMW-3f-6cz" customClass="PostCell">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="491"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="521" id="mMW-3f-6cz" customClass="PostCell">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="521"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mMW-3f-6cz" id="zev-OX-1EC">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="491"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="521"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="agv-N9-SEF">
@@ -124,24 +124,34 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVK-Qp-A3c">
+                                                    <rect key="frame" x="8" y="490.5" width="398" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aVK-Qp-A3c" secondAttribute="bottom" constant="8" id="22U-5X-pRt"/>
                                                 <constraint firstItem="mzP-2i-Oty" firstAttribute="leading" secondItem="zev-OX-1EC" secondAttribute="leading" constant="8" id="37U-tM-1ed"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ojl-7J-QnJ" secondAttribute="trailing" constant="8" id="A8f-0o-fh9"/>
                                                 <constraint firstItem="agv-N9-SEF" firstAttribute="leading" secondItem="zev-OX-1EC" secondAttribute="leading" id="JBU-PO-Zzi"/>
                                                 <constraint firstAttribute="trailing" secondItem="agv-N9-SEF" secondAttribute="trailing" id="NfY-am-tZT"/>
+                                                <constraint firstItem="aVK-Qp-A3c" firstAttribute="leading" secondItem="zev-OX-1EC" secondAttribute="leading" constant="8" id="TqF-VK-UG8"/>
                                                 <constraint firstItem="agv-N9-SEF" firstAttribute="top" secondItem="Ojl-7J-QnJ" secondAttribute="bottom" constant="8" id="VAh-oX-o4P"/>
                                                 <constraint firstAttribute="trailing" secondItem="mzP-2i-Oty" secondAttribute="trailing" constant="8" id="WAK-V5-Vrr"/>
                                                 <constraint firstItem="Ojl-7J-QnJ" firstAttribute="top" secondItem="zev-OX-1EC" secondAttribute="top" constant="8" id="YFT-dK-gvb"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mzP-2i-Oty" secondAttribute="bottom" constant="8" id="chk-HI-EcM"/>
+                                                <constraint firstItem="aVK-Qp-A3c" firstAttribute="top" secondItem="mzP-2i-Oty" secondAttribute="bottom" constant="8" id="aIw-03-QNK"/>
                                                 <constraint firstItem="Ojl-7J-QnJ" firstAttribute="leading" secondItem="zev-OX-1EC" secondAttribute="leading" constant="8" id="tEU-Mr-c05"/>
                                                 <constraint firstItem="mzP-2i-Oty" firstAttribute="top" secondItem="agv-N9-SEF" secondAttribute="bottom" constant="8" id="tYz-J5-ijo"/>
+                                                <constraint firstAttribute="trailing" secondItem="aVK-Qp-A3c" secondAttribute="trailing" constant="8" id="ufJ-ME-9om"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorLabel" destination="Ojl-7J-QnJ" id="Cen-d7-SVB"/>
                                             <outlet property="captionLabel" destination="mzP-2i-Oty" id="Y2E-K7-T8u"/>
                                             <outlet property="photoImageView" destination="agv-N9-SEF" id="BHe-s4-8gb"/>
+                                            <outlet property="timeAgoLabel" destination="aVK-Qp-A3c" id="IXi-im-N2v"/>
                                             <segue destination="2N9-ea-HDR" kind="show" id="Ij0-ga-5ds"/>
                                         </connections>
                                     </tableViewCell>
