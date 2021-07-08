@@ -294,6 +294,50 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYT-nU-YES">
+                                <rect key="frame" x="12" y="639.5" width="390" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dZ-a2-Ar6">
+                                <rect key="frame" x="12" y="665.5" width="390" height="50"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ifP-J4-xu9">
+                                        <rect key="frame" x="0.0" y="0.0" width="348" height="50"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Add a comment..."/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9c-CO-8nK">
+                                        <rect key="frame" x="348" y="0.0" width="42" height="50"/>
+                                        <state key="normal" title="Post"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ifP-J4-xu9" secondAttribute="trailing" constant="42" id="0Wx-ga-Uh6"/>
+                                    <constraint firstAttribute="bottom" secondItem="ifP-J4-xu9" secondAttribute="bottom" id="2Ga-0B-oaz"/>
+                                    <constraint firstAttribute="bottom" secondItem="t9c-CO-8nK" secondAttribute="bottom" id="5KG-Ar-gmK"/>
+                                    <constraint firstItem="t9c-CO-8nK" firstAttribute="top" secondItem="1dZ-a2-Ar6" secondAttribute="top" id="5oL-wh-nT4"/>
+                                    <constraint firstItem="ifP-J4-xu9" firstAttribute="top" secondItem="1dZ-a2-Ar6" secondAttribute="top" id="89G-QS-zWR"/>
+                                    <constraint firstItem="t9c-CO-8nK" firstAttribute="leading" secondItem="ifP-J4-xu9" secondAttribute="trailing" id="Yoz-lf-ASC"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ysh-9K-jh3"/>
+                                    <constraint firstAttribute="trailing" secondItem="t9c-CO-8nK" secondAttribute="trailing" id="lNQ-5D-jQb"/>
+                                    <constraint firstItem="ifP-J4-xu9" firstAttribute="leading" secondItem="1dZ-a2-Ar6" secondAttribute="leading" id="rz6-eb-GcR"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JEB-4l-JjB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -302,19 +346,25 @@
                             <constraint firstItem="H58-uh-wHH" firstAttribute="top" secondItem="qPI-vO-tcl" secondAttribute="bottom" constant="16" id="BOe-vy-aP1"/>
                             <constraint firstItem="6PI-Bd-bzS" firstAttribute="leading" secondItem="9yL-WS-VCb" secondAttribute="leading" id="CpT-2l-quI"/>
                             <constraint firstItem="qPI-vO-tcl" firstAttribute="trailing" secondItem="JEB-4l-JjB" secondAttribute="trailing" id="Ezn-k8-NR7"/>
+                            <constraint firstItem="1dZ-a2-Ar6" firstAttribute="leading" secondItem="9yL-WS-VCb" secondAttribute="leading" id="JUp-Xx-V2V"/>
                             <constraint firstItem="zRB-W5-Ehe" firstAttribute="leading" secondItem="H58-uh-wHH" secondAttribute="trailing" constant="16" id="M9d-AJ-TcJ"/>
+                            <constraint firstItem="1dZ-a2-Ar6" firstAttribute="top" secondItem="RYT-nU-YES" secondAttribute="bottom" constant="8" id="NTS-Kx-Bpc"/>
                             <constraint firstItem="JEB-4l-JjB" firstAttribute="trailing" secondItem="UQr-1m-3IH" secondAttribute="trailing" constant="12" id="RuD-Ql-kkS"/>
                             <constraint firstItem="6PI-Bd-bzS" firstAttribute="top" secondItem="9yL-WS-VCb" secondAttribute="bottom" constant="8" id="SsV-24-Q66"/>
                             <constraint firstItem="qPI-vO-tcl" firstAttribute="top" secondItem="iW7-nE-6fm" secondAttribute="bottom" constant="8" id="UZC-Jg-ycB"/>
                             <constraint firstItem="9yL-WS-VCb" firstAttribute="top" secondItem="UQr-1m-3IH" secondAttribute="bottom" constant="8" id="Uax-Ox-tvz"/>
+                            <constraint firstItem="RYT-nU-YES" firstAttribute="top" secondItem="6PI-Bd-bzS" secondAttribute="bottom" constant="12" id="Uy0-mD-3Ro"/>
                             <constraint firstItem="iW7-nE-6fm" firstAttribute="top" secondItem="JEB-4l-JjB" secondAttribute="top" constant="8" id="Xls-EV-IiT"/>
                             <constraint firstItem="9yL-WS-VCb" firstAttribute="leading" secondItem="JEB-4l-JjB" secondAttribute="leading" constant="12" id="cCy-Zq-8hr"/>
                             <constraint firstItem="JEB-4l-JjB" firstAttribute="trailing" secondItem="9yL-WS-VCb" secondAttribute="trailing" constant="12" id="hL8-JE-YGJ"/>
                             <constraint firstItem="JEB-4l-JjB" firstAttribute="trailing" secondItem="iW7-nE-6fm" secondAttribute="trailing" constant="8" id="mYz-lw-T0Y"/>
                             <constraint firstItem="zRB-W5-Ehe" firstAttribute="centerY" secondItem="H58-uh-wHH" secondAttribute="centerY" id="nzC-2m-du0"/>
                             <constraint firstItem="qPI-vO-tcl" firstAttribute="leading" secondItem="JEB-4l-JjB" secondAttribute="leading" id="o87-R8-oYF"/>
+                            <constraint firstItem="1dZ-a2-Ar6" firstAttribute="trailing" secondItem="9yL-WS-VCb" secondAttribute="trailing" id="r3d-O2-WdC"/>
                             <constraint firstItem="UQr-1m-3IH" firstAttribute="top" secondItem="H58-uh-wHH" secondAttribute="bottom" constant="8" id="szG-Z4-L7J"/>
+                            <constraint firstItem="RYT-nU-YES" firstAttribute="trailing" secondItem="9yL-WS-VCb" secondAttribute="trailing" id="tD0-2O-csa"/>
                             <constraint firstItem="6PI-Bd-bzS" firstAttribute="trailing" secondItem="9yL-WS-VCb" secondAttribute="trailing" id="uRl-cC-zxb"/>
+                            <constraint firstItem="RYT-nU-YES" firstAttribute="leading" secondItem="9yL-WS-VCb" secondAttribute="leading" id="uii-dP-osy"/>
                             <constraint firstItem="H58-uh-wHH" firstAttribute="leading" secondItem="JEB-4l-JjB" secondAttribute="leading" constant="10" id="wk8-hR-Qb2"/>
                             <constraint firstItem="UQr-1m-3IH" firstAttribute="leading" secondItem="JEB-4l-JjB" secondAttribute="leading" constant="12" id="xbA-mh-TI9"/>
                         </constraints>
@@ -323,10 +373,13 @@
                     <connections>
                         <outlet property="authorLabel" destination="iW7-nE-6fm" id="Hqm-Tt-lXq"/>
                         <outlet property="captionLabel" destination="9yL-WS-VCb" id="HPZ-Ku-Yeq"/>
+                        <outlet property="commentTextView" destination="ifP-J4-xu9" id="Xdk-Wp-hoJ"/>
+                        <outlet property="commentView" destination="1dZ-a2-Ar6" id="FtP-tw-agX"/>
                         <outlet property="createdAtLabel" destination="6PI-Bd-bzS" id="z3c-Z0-iff"/>
                         <outlet property="likeButton" destination="H58-uh-wHH" id="i9f-lO-z3L"/>
                         <outlet property="likesCountLabel" destination="UQr-1m-3IH" id="4B9-Gb-jT0"/>
                         <outlet property="photoImageView" destination="qPI-vO-tcl" id="sa1-19-cBF"/>
+                        <outlet property="postCommentButton" destination="t9c-CO-8nK" id="4pW-pQ-qNF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6DR-N9-1JT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

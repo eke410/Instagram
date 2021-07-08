@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likesCountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UIView *commentView;
+@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
+@property (weak, nonatomic) IBOutlet UIButton *postCommentButton;
 
 @end
 
@@ -26,6 +29,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self refreshData];
+    
+    self.commentView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 }
 
 - (void)refreshData {
