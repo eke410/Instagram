@@ -272,6 +272,9 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
                                 </state>
+                                <connections>
+                                    <action selector="likePost:" destination="2N9-ea-HDR" eventType="touchUpInside" id="GCQ-Sx-IzK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRB-W5-Ehe">
                                 <rect key="frame" x="52" y="525" width="28" height="24"/>
@@ -321,6 +324,7 @@
                         <outlet property="authorLabel" destination="iW7-nE-6fm" id="Hqm-Tt-lXq"/>
                         <outlet property="captionLabel" destination="9yL-WS-VCb" id="HPZ-Ku-Yeq"/>
                         <outlet property="createdAtLabel" destination="6PI-Bd-bzS" id="z3c-Z0-iff"/>
+                        <outlet property="likeButton" destination="H58-uh-wHH" id="i9f-lO-z3L"/>
                         <outlet property="likesCountLabel" destination="UQr-1m-3IH" id="4B9-Gb-jT0"/>
                         <outlet property="photoImageView" destination="qPI-vO-tcl" id="sa1-19-cBF"/>
                     </connections>
