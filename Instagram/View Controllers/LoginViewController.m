@@ -16,6 +16,7 @@
 @property (strong, nonatomic) UIAlertController *emptyAlert;
 @property (strong, nonatomic) UIAlertController *registerErrorAlert;
 @property (strong, nonatomic) UIAlertController *loginErrorAlert;
+@property (strong, nonatomic) UIAlertController *usernameAlreadyExistsAlert;
 
 @end
 
@@ -36,6 +37,10 @@
     
     self.loginErrorAlert = [UIAlertController alertControllerWithTitle:@"Error logging in user" message:@"Please try again." preferredStyle:(UIAlertControllerStyleAlert)];
     [self.loginErrorAlert addAction:okAction];
+    
+    self.usernameAlreadyExistsAlert = [UIAlertController alertControllerWithTitle:@"Username not available" message:@"Please choose a new username." preferredStyle:(UIAlertControllerStyleAlert)];
+    [self.usernameAlreadyExistsAlert addAction:okAction];
+
 }
 
 - (IBAction)loginUser:(id)sender {
@@ -85,10 +90,16 @@
         // call sign up function on the object
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
             if (error != nil) {
-                NSLog(@"Error: %@", error.localizedDescription);
-                [self presentViewController:self.registerErrorAlert animated:YES completion:^{
-                    [self.activityIndicator stopAnimating];
-                }];
+                if ([error.localizedDescription isEqualToString:@"Account already exists for this username."]) {
+                    [self presentViewController:self.usernameAlreadyExistsAlert animated:YES completion:^{
+                        [self.activityIndicator stopAnimating];
+                    }];
+                } else {
+                    NSLog(@"Error: %@", error.localizedDescription);
+                    [self presentViewController:self.registerErrorAlert animated:YES completion:^{
+                        [self.activityIndicator stopAnimating];
+                    }];
+                }
             } else {
                 NSLog(@"User registered successfully");
                 [self.activityIndicator stopAnimating];
