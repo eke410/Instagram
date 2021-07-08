@@ -190,6 +190,7 @@
                                         <connections>
                                             <outlet property="authorLabel" destination="Ojl-7J-QnJ" id="Cen-d7-SVB"/>
                                             <outlet property="captionLabel" destination="mzP-2i-Oty" id="Y2E-K7-T8u"/>
+                                            <outlet property="likeButton" destination="wso-84-kPe" id="DRv-hI-g1v"/>
                                             <outlet property="likesCountLabel" destination="PGt-a8-zDx" id="gEi-aO-YDb"/>
                                             <outlet property="photoImageView" destination="agv-N9-SEF" id="BHe-s4-8gb"/>
                                             <outlet property="timeAgoLabel" destination="aVK-Qp-A3c" id="IXi-im-N2v"/>

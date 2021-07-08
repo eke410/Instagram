@@ -29,11 +29,46 @@
     self.authorLabel.text = self.post.author.username;
     self.timeAgoLabel.text = self.post.createdAt.shortTimeAgoSinceNow;
     self.likesCountLabel.text = [[self.post.likeCount stringValue] stringByAppendingString:@" likes"];
+    
+    if ([self.post.usersWhoLiked containsObject:PFUser.currentUser.objectId]) {
+        [self updateLikeButtonToLiked];
+    } else {
+        [self updateLikeButtonToUnliked];
+    }
 }
 
 - (IBAction)likePost:(id)sender {
-    NSLog(@"liking post");
-    
+    if (![self.post.usersWhoLiked containsObject:PFUser.currentUser.objectId]) {
+        NSLog(@"Liking post");
+        self.post.usersWhoLiked = [self.post.usersWhoLiked arrayByAddingObject:PFUser.currentUser.objectId];
+        self.post.likeCount = @([self.post.likeCount intValue] + 1);
+        [self.post saveInBackground];
+        
+        self.likesCountLabel.text = [[self.post.likeCount stringValue] stringByAppendingString:@" likes"];
+        [self updateLikeButtonToLiked];
+    } else {
+        NSLog(@"Unliking post");
+        NSMutableArray *mutableCopy = [self.post.usersWhoLiked mutableCopy];
+        [mutableCopy removeObject:PFUser.currentUser.objectId];
+        self.post.usersWhoLiked = (NSArray *)mutableCopy;
+        self.post.likeCount = @([self.post.likeCount intValue] - 1);
+        [self.post saveInBackground];
+        
+        self.likesCountLabel.text = [[self.post.likeCount stringValue] stringByAppendingString:@" likes"];
+        [self updateLikeButtonToUnliked];
+    }
+}
+
+- (void)updateLikeButtonToLiked {
+    UIImage *image = [UIImage systemImageNamed:@"heart.fill" withConfiguration:[UIImageSymbolConfiguration configurationWithScale:(UIImageSymbolScaleLarge)]];
+    [self.likeButton setImage:image forState:UIControlStateNormal];
+    [self.likeButton setTintColor:[UIColor redColor]];
+}
+
+- (void)updateLikeButtonToUnliked {
+    UIImage *image = [UIImage systemImageNamed:@"heart" withConfiguration:[UIImageSymbolConfiguration configurationWithScale:(UIImageSymbolScaleLarge)]];
+    [self.likeButton setImage:image forState:UIControlStateNormal];
+    [self.likeButton setTintColor:[UIColor blackColor]];
 }
 
 
