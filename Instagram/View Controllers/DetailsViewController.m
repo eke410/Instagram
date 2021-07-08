@@ -17,12 +17,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
-@property (weak, nonatomic) IBOutlet UILabel *likesCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIView *commentView;
 @property (weak, nonatomic) IBOutlet UITextView *commentTextView;
 @property (weak, nonatomic) IBOutlet UIButton *postCommentButton;
 @property (weak, nonatomic) IBOutlet UITableView *commentTableView;
+@property (weak, nonatomic) IBOutlet UILabel *commentCountLabel;
 
 @end
 
@@ -46,7 +47,8 @@
     self.captionLabel.text = self.post.caption;
     self.authorLabel.text = self.post.author.username;
     self.createdAtLabel.text = [self.post.createdAt formattedDateWithFormat:@"MMMM d, yyyy · h:mm a"];
-    self.likesCountLabel.text = [[self.post.likeCount stringValue] stringByAppendingString:@" likes"];
+    self.likeCountLabel.text = [[self.post.likeCount stringValue] stringByAppendingString:@" likes"];
+    self.commentCountLabel.text = [NSString stringWithFormat:@"(%@)", self.post.commentCount];
     
     if ([self.post.usersWhoLiked containsObject:PFUser.currentUser.objectId]) {
         [self updateLikeButtonToLiked];
@@ -62,7 +64,7 @@
         self.post.likeCount = @([self.post.likeCount intValue] + 1);
         [self.post saveInBackground];
         
-        self.likesCountLabel.text = [[self.post.likeCount stringValue] stringByAppendingString:@" likes"];
+        self.likeCountLabel.text = [[self.post.likeCount stringValue] stringByAppendingString:@" likes"];
         [self updateLikeButtonToLiked];
     } else {
         NSLog(@"Unliked post");
@@ -72,7 +74,7 @@
         self.post.likeCount = @([self.post.likeCount intValue] - 1);
         [self.post saveInBackground];
         
-        self.likesCountLabel.text = [[self.post.likeCount stringValue] stringByAppendingString:@" likes"];
+        self.likeCountLabel.text = [[self.post.likeCount stringValue] stringByAppendingString:@" likes"];
         [self updateLikeButtonToUnliked];
     }
 }
@@ -102,6 +104,7 @@
         // TODO: update UI
         self.commentTextView.text = @"";
         [self.commentTableView reloadData];
+        self.commentCountLabel.text = [NSString stringWithFormat:@"(%@)", self.post.commentCount];
     }
 }
 
