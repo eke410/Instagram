@@ -9,8 +9,9 @@
 #import "Post.h"
 #import "DateTools.h"
 #import "UITextView+Placeholder.h"
+#import "CommentCell.h"
 
-@interface DetailsViewController ()
+@interface DetailsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIView *commentView;
 @property (weak, nonatomic) IBOutlet UITextView *commentTextView;
 @property (weak, nonatomic) IBOutlet UIButton *postCommentButton;
+@property (weak, nonatomic) IBOutlet UITableView *commentTableView;
 
 @end
 
@@ -30,6 +32,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self refreshData];
+    
+    self.commentTableView.dataSource = self;
+    self.commentTableView.delegate = self;
     
     self.commentView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 }
@@ -52,7 +57,7 @@
 
 - (IBAction)likePost:(id)sender {
     if (![self.post.usersWhoLiked containsObject:PFUser.currentUser.objectId]) {
-        NSLog(@"Liking post");
+        NSLog(@"Liked post");
         self.post.usersWhoLiked = [self.post.usersWhoLiked arrayByAddingObject:PFUser.currentUser.objectId];
         self.post.likeCount = @([self.post.likeCount intValue] + 1);
         [self.post saveInBackground];
@@ -60,7 +65,7 @@
         self.likesCountLabel.text = [[self.post.likeCount stringValue] stringByAppendingString:@" likes"];
         [self updateLikeButtonToLiked];
     } else {
-        NSLog(@"Unliking post");
+        NSLog(@"Unliked post");
         NSMutableArray *mutableCopy = [self.post.usersWhoLiked mutableCopy];
         [mutableCopy removeObject:PFUser.currentUser.objectId];
         self.post.usersWhoLiked = (NSArray *)mutableCopy;
@@ -88,15 +93,28 @@
     if ([self.commentTextView.text isEqualToString:@""]) {
         NSLog(@"Cannot post empty comment");
     } else {
-        NSLog(@"Posting comment");
-        NSDictionary *comment = [[NSDictionary alloc] initWithObjectsAndKeys:self.commentTextView.text, @"text", PFUser.currentUser.objectId, @"user_id", nil];
-        self.post.comments = [self.post.comments arrayByAddingObject:comment];
+        NSLog(@"Posted comment");
+        NSDictionary *comment = [[NSDictionary alloc] initWithObjectsAndKeys:self.commentTextView.text, @"text", PFUser.currentUser.username, @"username", PFUser.currentUser.objectId, @"user_id", nil];
+        self.post.comments = [[[NSArray alloc] initWithObjects:comment, nil] arrayByAddingObjectsFromArray:self.post.comments];
         self.post.commentCount = @([self.post.commentCount intValue] + 1);
         [self.post saveInBackground];
         
         // TODO: update UI
         self.commentTextView.text = @"";
+        [self.commentTableView reloadData];
     }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.post.commentCount integerValue];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CommentCell *cell = [self.commentTableView dequeueReusableCellWithIdentifier:@"CommentCell"];
+    NSDictionary *comment = self.post.comments[indexPath.row];
+    cell.usernameLabel.text = comment[@"username"];
+    cell.commentTextLabel.text = comment[@"text"];
+    return cell;
 }
 
 /*
