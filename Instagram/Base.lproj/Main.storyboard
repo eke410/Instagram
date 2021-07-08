@@ -315,6 +315,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9c-CO-8nK">
                                         <rect key="frame" x="348" y="0.0" width="42" height="50"/>
                                         <state key="normal" title="Post"/>
+                                        <connections>
+                                            <action selector="commentPost:" destination="2N9-ea-HDR" eventType="touchUpInside" id="16H-ZD-LdR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

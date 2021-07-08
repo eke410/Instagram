@@ -8,6 +8,7 @@
 #import "DetailsViewController.h"
 #import "Post.h"
 #import "DateTools.h"
+#import "UITextView+Placeholder.h"
 
 @interface DetailsViewController ()
 
@@ -81,6 +82,21 @@
     UIImage *image = [UIImage systemImageNamed:@"heart" withConfiguration:[UIImageSymbolConfiguration configurationWithScale:(UIImageSymbolScaleLarge)]];
     [self.likeButton setImage:image forState:UIControlStateNormal];
     [self.likeButton setTintColor:[UIColor blackColor]];
+}
+
+- (IBAction)commentPost:(id)sender {
+    if ([self.commentTextView.text isEqualToString:@""]) {
+        NSLog(@"Cannot post empty comment");
+    } else {
+        NSLog(@"Posting comment");
+        NSDictionary *comment = [[NSDictionary alloc] initWithObjectsAndKeys:self.commentTextView.text, @"text", PFUser.currentUser.objectId, @"user_id", nil];
+        self.post.comments = [self.post.comments arrayByAddingObject:comment];
+        self.post.commentCount = @([self.post.commentCount intValue] + 1);
+        [self.post saveInBackground];
+        
+        // TODO: update UI
+        self.commentTextView.text = @"";
+    }
 }
 
 /*
