@@ -14,6 +14,7 @@
     user.objectId = pfUser.objectId;
     user.username = pfUser.username;
     user.photo = pfUser[@"photo"];
+    user.pfUser = pfUser;
     return user;
 }
 

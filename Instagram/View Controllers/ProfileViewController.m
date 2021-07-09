@@ -12,7 +12,7 @@
 #import "Post.h"
 #import "DetailsViewController.h"
 
-@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *posts;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
@@ -117,6 +117,37 @@ CGFloat itemSideLength;
     return newImage;
 }
 
+- (IBAction)didTapProfilePhoto:(UITapGestureRecognizer *)sender {
+    if (self.user.objectId == PFUser.currentUser.objectId) { // checks that it's your profile, not another user's
+        UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+        imagePickerVC.delegate = self;
+        imagePickerVC.allowsEditing = YES;
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+   
+   // Get the image captured by the UIImagePickerController
+   UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+   UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+
+   // Do something with the images (based on your use case)
+    UIImage *resizedImage = [self resizeImage:editedImage withSize:CGSizeMake(500, 500)];
+    self.user.photo = [Post getPFFileFromImage:resizedImage];
+    self.user.pfUser[@"photo"] = [Post getPFFileFromImage:resizedImage];
+    [self.user.pfUser save];
+    
+    [self.user.photo getDataInBackgroundWithBlock:^(NSData * _Nullable imageData, NSError * _Nullable error) {
+        UIImage *image = [UIImage imageWithData:imageData];
+        [self.photoImageView setImage:image];
+    }];
+    
+   
+   // Dismiss UIImagePickerController to go back to your original view controller
+   [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 #pragma mark - Navigation
