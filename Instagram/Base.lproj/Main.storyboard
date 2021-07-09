@@ -626,6 +626,7 @@
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="photoImageView" destination="3lZ-f3-Xa4" id="afa-8v-2RI"/>
+                                            <segue destination="2N9-ea-HDR" kind="show" id="bgg-tl-i8d"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -684,6 +685,9 @@
             <point key="canvasLocation" x="1813" y="1221"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bgg-tl-i8d"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bubble.right" catalog="system" width="128" height="110"/>
         <image name="camera" catalog="system" width="128" height="94"/>
