@@ -118,7 +118,7 @@ CGFloat itemSideLength;
 }
 
 - (IBAction)didTapProfilePhoto:(UITapGestureRecognizer *)sender {
-    if (self.user.objectId == PFUser.currentUser.objectId) { // checks that it's your profile, not another user's
+    if ([self.user.objectId isEqualToString:PFUser.currentUser.objectId]) { // checks that it's your profile, not another user's
         UIImagePickerController *imagePickerVC = [UIImagePickerController new];
         imagePickerVC.delegate = self;
         imagePickerVC.allowsEditing = YES;
