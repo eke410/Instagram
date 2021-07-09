@@ -25,6 +25,9 @@
     [self.post.image getDataInBackgroundWithBlock:^(NSData * _Nullable imageData, NSError * _Nullable error) {
         [self.photoImageView setImage:[UIImage imageWithData:imageData]];
     }];
+    [self.post.author[@"photo"] getDataInBackgroundWithBlock:^(NSData * _Nullable imageData, NSError * _Nullable error) {
+        [self.authorPhotoImageView setImage:[UIImage imageWithData:imageData]];
+    }];
     self.captionLabel.text = self.post.caption;
     self.authorLabel.text = self.post.author.username;
     self.timeAgoLabel.text = self.post.createdAt.shortTimeAgoSinceNow;
