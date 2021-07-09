@@ -86,6 +86,7 @@
         // set user properties
         newUser.username = self.usernameField.text;
         newUser.password = self.passwordField.text;
+        newUser[@"profilePhotoURLString"] = @"";
         
         // call sign up function on the object
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {

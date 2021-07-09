@@ -30,7 +30,7 @@ CGFloat itemSideLength;
     // Do any additional setup after loading the view.
     
     if (!self.user) {
-        self.user = [User createUserFromPFUser:PFUser.currentUser];
+        self.user = [User getUserWithId:PFUser.currentUser.objectId];
     }
     
     // set outlet values
@@ -55,6 +55,9 @@ CGFloat itemSideLength;
 
     layout.itemSize = CGSizeMake(itemSideLength, itemSideLength);
     layout.estimatedItemSize = CGSizeMake(itemSideLength, itemSideLength);
+
+    self.photoImageView.layer.borderColor = [UIColor systemGray4Color].CGColor;
+    
 }
 
 - (void)queryPosts:(int)limit {
