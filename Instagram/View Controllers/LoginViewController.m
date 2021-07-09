@@ -7,6 +7,7 @@
 
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import "Post.h"
 
 @interface LoginViewController ()
 
@@ -86,8 +87,8 @@
         // set user properties
         newUser.username = self.usernameField.text;
         newUser.password = self.passwordField.text;
-        newUser[@"profilePhotoURLString"] = @"";
-        
+        newUser[@"photo"] = [Post getPFFileFromImage:[UIImage imageNamed:@"profile_icon"]];
+
         // call sign up function on the object
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
             if (error != nil) {

@@ -13,7 +13,7 @@
     User *user = [User new];
     user.objectId = pfUser.objectId;
     user.username = pfUser.username;
-    user.profilePhotoURLString = pfUser[@"profilePhotoURLString"];
+    user.photo = pfUser[@"photo"];
     return user;
 }
 

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) NSString *objectId;
 @property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *profilePhotoURLString;
+@property (nonatomic, strong) PFFileObject *photo;
 
 + (User *) createUserFromPFUser:(PFUser *)pfUser;
 + (User *) getUserWithId:(NSString *)userId;

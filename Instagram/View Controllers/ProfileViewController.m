@@ -34,9 +34,9 @@ CGFloat itemSideLength;
     }
     
     // set outlet values
-    if (![self.user.profilePhotoURLString isEqualToString:@""]) {
-        [self.photoImageView setImageWithURL:[NSURL URLWithString:self.user.profilePhotoURLString]];
-    }
+    [self.user.photo getDataInBackgroundWithBlock:^(NSData * _Nullable imageData, NSError * _Nullable error) {
+        [self.photoImageView setImage:[UIImage imageWithData:imageData]];
+    }];
     self.usernameLabel.text = self.user.username;
     
     // query posts
