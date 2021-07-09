@@ -38,6 +38,10 @@
     self.commentTableView.delegate = self;
     
     self.commentView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    
+    if (self.cameFromCommentButton) {
+        [self startCommenting:@""];
+    }
 }
 
 - (void)refreshData {
@@ -118,6 +122,10 @@
     cell.usernameLabel.text = comment[@"username"];
     cell.commentTextLabel.text = comment[@"text"];
     return cell;
+}
+
+- (IBAction)startCommenting:(id)sender {
+    [self.commentTextView becomeFirstResponder];
 }
 
 /*

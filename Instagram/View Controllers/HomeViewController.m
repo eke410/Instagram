@@ -70,7 +70,13 @@ InfiniteScrollActivityView *loadingMoreView;
     PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     cell.post = self.posts[indexPath.row];
     [cell refreshData];
+    [cell.commentButton addTarget:self action:@selector(commentButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
+}
+
+- (void)commentButtonClicked:(PostCell *)cell {
+    NSArray *sender = [[NSArray alloc] initWithObjects:cell, nil];
+    [self performSegueWithIdentifier:@"detailsSegue" sender:sender];
 }
 
 - (void)queryPosts:(int)limit {
@@ -146,6 +152,9 @@ InfiniteScrollActivityView *loadingMoreView;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.post = self.posts[indexPath.row];
+        if ([sender isKindOfClass:[NSArray class]]) { // comment button in a PostCell clicked
+            detailsViewController.cameFromCommentButton = YES;
+        }
     } else if ([segue.identifier isEqualToString:@"composeSegue"]) {
         ComposeViewController *composeViewController = [segue destinationViewController];
         composeViewController.delegate = self;
