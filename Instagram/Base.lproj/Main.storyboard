@@ -257,11 +257,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW7-nE-6fm">
-                                <rect key="frame" x="56" y="72" width="350" height="24"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW7-nE-6fm">
+                                <rect key="frame" x="56" y="72" width="121.5" height="24"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Y3u-Dt-3xc" appends="YES" id="SO2-AL-P4B"/>
+                                </connections>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qPI-vO-tcl">
                                 <rect key="frame" x="0.0" y="112" width="414" height="414"/>
@@ -409,8 +413,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6rM-ph-bkz">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6rM-ph-bkz">
                                 <rect key="frame" x="8" y="64" width="40" height="40"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="FZY-8w-yMs"/>
                                     <constraint firstAttribute="height" constant="40" id="RWI-CV-ZH3"/>
@@ -420,6 +425,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="HYn-vJ-YKv" appends="YES" id="8RR-cE-9Rh"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JEB-4l-JjB"/>
@@ -446,7 +454,6 @@
                             <constraint firstItem="JEB-4l-JjB" firstAttribute="bottom" secondItem="1dZ-a2-Ar6" secondAttribute="bottom" id="dgg-jY-sXD"/>
                             <constraint firstItem="JEB-4l-JjB" firstAttribute="trailing" secondItem="9yL-WS-VCb" secondAttribute="trailing" constant="12" id="hL8-JE-YGJ"/>
                             <constraint firstItem="1dZ-a2-Ar6" firstAttribute="top" secondItem="xKj-Wl-ozg" secondAttribute="bottom" constant="8" id="lsb-Op-Vgw"/>
-                            <constraint firstItem="JEB-4l-JjB" firstAttribute="trailing" secondItem="iW7-nE-6fm" secondAttribute="trailing" constant="8" id="mYz-lw-T0Y"/>
                             <constraint firstItem="bK9-uc-84R" firstAttribute="leading" secondItem="RYT-nU-YES" secondAttribute="trailing" constant="2" id="nEI-mb-KTo"/>
                             <constraint firstItem="zRB-W5-Ehe" firstAttribute="centerY" secondItem="H58-uh-wHH" secondAttribute="centerY" id="nzC-2m-du0"/>
                             <constraint firstItem="JEB-4l-JjB" firstAttribute="trailing" secondItem="xKj-Wl-ozg" secondAttribute="trailing" id="nzd-fE-rJI"/>
@@ -474,9 +481,20 @@
                         <outlet property="likeCountLabel" destination="UQr-1m-3IH" id="4B9-Gb-jT0"/>
                         <outlet property="photoImageView" destination="qPI-vO-tcl" id="sa1-19-cBF"/>
                         <outlet property="postCommentButton" destination="t9c-CO-8nK" id="4pW-pQ-qNF"/>
+                        <segue destination="M9m-hD-6Ez" kind="show" identifier="profileSegue" id="uP1-sk-VqS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6DR-N9-1JT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HYn-vJ-YKv">
+                    <connections>
+                        <action selector="tappedProfilePhoto:" destination="2N9-ea-HDR" id="5tQ-tc-QXk"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Y3u-Dt-3xc">
+                    <connections>
+                        <action selector="tappedUsernameLabel:" destination="2N9-ea-HDR" id="Kpl-fF-BzJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3228.985507246377" y="445.98214285714283"/>
         </scene>
@@ -729,6 +747,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="uP1-sk-VqS"/>
         <segue reference="Ij0-ga-5ds"/>
     </inferredMetricsTieBreakers>
     <resources>

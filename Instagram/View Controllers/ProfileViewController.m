@@ -40,7 +40,7 @@ CGFloat itemSideLength;
     self.usernameLabel.text = self.user.username;
     
     // query posts
-    [self queryPosts:60];
+    [self queryPosts];
     
     // set up collection view
     self.collectionView.dataSource = self;
@@ -60,13 +60,12 @@ CGFloat itemSideLength;
     
 }
 
-- (void)queryPosts:(int)limit {
-    NSLog(@"queried: %i", limit);
+- (void)queryPosts{
+    NSLog(@"queried");
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
-    query.limit = limit;
 
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {

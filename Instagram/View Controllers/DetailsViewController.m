@@ -10,6 +10,7 @@
 #import "DateTools.h"
 #import "UITextView+Placeholder.h"
 #import "CommentCell.h"
+#import "ProfileViewController.h"
 
 @interface DetailsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -132,14 +133,33 @@
     [self.commentTextView becomeFirstResponder];
 }
 
-/*
+
+- (IBAction)tappedProfilePhoto:(UITapGestureRecognizer *)sender {
+    [self goToAuthorProfilePage];
+}
+
+- (IBAction)tappedUsernameLabel:(id)sender {
+    [self goToAuthorProfilePage];
+}
+
+- (void) goToAuthorProfilePage {
+    User *user = [User createUserFromPFUser:self.post.author];
+    [self performSegueWithIdentifier:@"profileSegue" sender:user];
+    
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"profileSegue"]) {
+        ProfileViewController *profileViewController = [segue destinationViewController];
+        profileViewController.user = sender;
+    }
 }
-*/
+
 
 @end
