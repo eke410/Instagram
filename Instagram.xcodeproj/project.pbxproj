@@ -15,6 +15,9 @@
 		0446D8632694F09A00F3BB60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446D8622694F09A00F3BB60 /* LoginViewController.m */; };
 		0446D8662694F37100F3BB60 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446D8652694F37100F3BB60 /* HomeViewController.m */; };
 		0496AB3526979CFD0090CBED /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496AB3426979CFD0090CBED /* CommentCell.m */; };
+		04C81C432698DE6200629B5B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C81C422698DE6200629B5B /* ProfileViewController.m */; };
+		04C81C462698DFF400629B5B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C81C452698DFF400629B5B /* User.m */; };
+		04C81C492698E70D00629B5B /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C81C482698E70D00629B5B /* PostCollectionViewCell.m */; };
 		04FB2EF02694E75C00CF7B53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB2EEF2694E75C00CF7B53 /* AppDelegate.m */; };
 		04FB2EF32694E75C00CF7B53 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FB2EF22694E75C00CF7B53 /* SceneDelegate.m */; };
 		04FB2EF92694E75C00CF7B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FB2EF72694E75C00CF7B53 /* Main.storyboard */; };
@@ -62,6 +65,12 @@
 		0446D8652694F37100F3BB60 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0496AB3326979CFD0090CBED /* CommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		0496AB3426979CFD0090CBED /* CommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		04C81C412698DE6200629B5B /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		04C81C422698DE6200629B5B /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		04C81C442698DFF400629B5B /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		04C81C452698DFF400629B5B /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		04C81C472698E70D00629B5B /* PostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionViewCell.h; sourceTree = "<group>"; };
+		04C81C482698E70D00629B5B /* PostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionViewCell.m; sourceTree = "<group>"; };
 		04FB2EEB2694E75C00CF7B53 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FB2EEE2694E75C00CF7B53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04FB2EEF2694E75C00CF7B53 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -135,6 +144,8 @@
 			children = (
 				041859AF26950FF000F76FB6 /* Post.h */,
 				041859B026950FF000F76FB6 /* Post.m */,
+				04C81C442698DFF400629B5B /* User.h */,
+				04C81C452698DFF400629B5B /* User.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,6 +161,8 @@
 				041859AC2695003900F76FB6 /* ComposeViewController.m */,
 				04084400269634A9003AA2DA /* DetailsViewController.h */,
 				04084401269634A9003AA2DA /* DetailsViewController.m */,
+				04C81C412698DE6200629B5B /* ProfileViewController.h */,
+				04C81C422698DE6200629B5B /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -163,6 +176,8 @@
 				0408440426964B57003AA2DA /* InfiniteScrollActivityView.m */,
 				0496AB3326979CFD0090CBED /* CommentCell.h */,
 				0496AB3426979CFD0090CBED /* CommentCell.m */,
+				04C81C472698E70D00629B5B /* PostCollectionViewCell.h */,
+				04C81C482698E70D00629B5B /* PostCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -473,16 +488,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C81C462698DFF400629B5B /* User.m in Sources */,
 				0496AB3526979CFD0090CBED /* CommentCell.m in Sources */,
 				0446D8632694F09A00F3BB60 /* LoginViewController.m in Sources */,
 				04FB2EF02694E75C00CF7B53 /* AppDelegate.m in Sources */,
 				0408440526964B57003AA2DA /* InfiniteScrollActivityView.m in Sources */,
 				04FB2F012694E75D00CF7B53 /* main.m in Sources */,
+				04C81C492698E70D00629B5B /* PostCollectionViewCell.m in Sources */,
 				041859B4269517E600F76FB6 /* PostCell.m in Sources */,
 				041859AD2695003900F76FB6 /* ComposeViewController.m in Sources */,
 				0446D8662694F37100F3BB60 /* HomeViewController.m in Sources */,
 				04084402269634A9003AA2DA /* DetailsViewController.m in Sources */,
 				04FB2EF32694E75C00CF7B53 /* SceneDelegate.m in Sources */,
+				04C81C432698DE6200629B5B /* ProfileViewController.m in Sources */,
 				041859B126950FF000F76FB6 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

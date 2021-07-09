@@ -10,6 +10,7 @@ target 'Instagram' do
   pod 'UITextView+Placeholder'
   pod 'DateTools'
   pod 'MBProgressHUD'
+  pod 'AFNetworking'
 
   target 'InstagramTests' do
     inherit! :search_paths
