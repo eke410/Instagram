@@ -46,14 +46,14 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-![1.1](https://i.imgur.com/Ouj3NKx.gif)
-![1.2](https://i.imgur.com/1XNgJ5G.gif)
-![2.1](https://i.imgur.com/WDy95oB.gif)
-![2.2](https://i.imgur.com/3SfjMWv.gif)
-![2.3](https://i.imgur.com/vVee7b6.gif)
-![3](https://i.imgur.com/GHB1NAb.gif)
-![4.1](https://i.imgur.com/zJKqAmF.gif)
-![4.2](https://i.imgur.com/vrHE9R5.gif)
+![](https://i.imgur.com/Ouj3NKx.gif)
+![](https://i.imgur.com/1XNgJ5G.gif)
+![](https://i.imgur.com/WDy95oB.gif)
+![](https://i.imgur.com/3SfjMWv.gif)
+![](https://i.imgur.com/vVee7b6.gif)
+![](https://i.imgur.com/GHB1NAb.gif)
+![](https://i.imgur.com/zJKqAmF.gif)
+![](https://i.imgur.com/vrHE9R5.gif)
 
 GIF created with [ezgif](https://ezgif.com/video-to-gif).
 
