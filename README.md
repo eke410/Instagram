@@ -45,15 +45,16 @@ Please list two areas of the assignment you'd like to **discuss further with you
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+None of the gifs are loading so here are the links:
 
-![](https://i.imgur.com/Ouj3NKx.gif)
-![](https://i.imgur.com/1XNgJ5G.gif)
-![](https://i.imgur.com/WDy95oB.gif)
-![](https://i.imgur.com/3SfjMWv.gif)
-![](https://i.imgur.com/vVee7b6.gif)
-![](https://i.imgur.com/GHB1NAb.gif)
-![](https://i.imgur.com/zJKqAmF.gif)
-![](https://i.imgur.com/vrHE9R5.gif)
+1. https://i.imgur.com/Ouj3NKx.gif
+2. https://i.imgur.com/1XNgJ5G.gif
+3. https://i.imgur.com/WDy95oB.gif
+4. https://i.imgur.com/3SfjMWv.gif
+5. https://i.imgur.com/vVee7b6.gif
+6. https://i.imgur.com/GHB1NAb.gif
+7. https://i.imgur.com/zJKqAmF.gif
+8. https://i.imgur.com/vrHE9R5.gif
 
 GIF created with [ezgif](https://ezgif.com/video-to-gif).
 
