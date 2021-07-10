@@ -2,7 +2,7 @@
 
 Instagram is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **18** hours spent in total
 
 ## User Stories
 
@@ -35,26 +35,34 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Click comment button to immediately start commenting on a post.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Better way to add profile photo to user. 
+2. How to use collection views better. 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![1.1](https://i.imgur.com/Ouj3NKx.gif)
+![1.2](https://i.imgur.com/1XNgJ5G.gif)
+![2.1](https://i.imgur.com/WDy95oB.gif)
+![2.2](https://i.imgur.com/3SfjMWv.gif)
+![2.3](https://i.imgur.com/vVee7b6.gif)
+![3](https://i.imgur.com/GHB1NAb.gif)
+![4.1](https://i.imgur.com/zJKqAmF.gif)
+![4.2](https://i.imgur.com/vrHE9R5.gif)
 
-GIF created with [Kap](https://getkap.co/).
+GIF created with [ezgif](https://ezgif.com/video-to-gif).
 
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [Parse](https://docs.parseplatform.org/)
+- [AFNetworking](https://github.com/AFNetworking/AFNetworking) 
 - [UITextView-Placeholder](https://github.com/devxoul/UITextView-Placeholder)
 - [DateTools](https://github.com/MatthewYork/DateTools)
 - [MBProgressHUD](https://github.com/matej/MBProgressHUD)
@@ -63,6 +71,9 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 ## Notes
 
 Describe any challenges encountered while building the app.
+- implementing infinite scrolling - accidentally made 4000 API requests in the span of a few minutes
+- adding profile picture feature - figuring how to incorporate that extra property into PFUser object
+- collection view - cells were not sizing the way I wanted them to  
 
 ## License
 
